@@ -1,0 +1,7 @@
+{
+    "terminal": "kitty",
+    "files": "nautilus --new-window",
+    "browser": "firefox",
+    "editor": "code",
+    "ipc-instant-replay": "obs-cmd replay save"
+}

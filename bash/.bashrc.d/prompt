@@ -1,0 +1,6 @@
+PS1='[\u@\h \W]\$ '
+
+if command -v oh-my-posh &> /dev/null; then
+    OMP_THEME="~/.bashrc.d/resources/omp-theme.omp.json"
+    eval "$(oh-my-posh init bash --config "$OMP_THEME")"
+fi

@@ -1,0 +1,34 @@
+layout {
+    gaps 5
+    border {
+        width 2
+        active-color "#322d8b"
+        inactive-color "#191b1f"
+        urgent-color "#d18771"
+    }
+
+    focus-ring {
+        width 2
+        active-color "#322d8b"
+        inactive-color "#191b1f"
+        urgent-color "#d18771"
+    }
+
+    shadow { 
+        on
+        softness 25
+        draw-behind-window false
+    }
+
+    center-focused-column "never"
+    always-center-single-column
+    default-column-width { proportion 0.5; }
+    default-column-display "normal"
+    tab-indicator {
+        hide-when-single-tab
+        active-color "#322d8b"
+        inactive-color "#191b1f"
+    }
+
+    background-color "transparent"
+}
