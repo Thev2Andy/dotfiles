@@ -1,0 +1,45 @@
+// stolen straight from the wiki btw🤑🔥
+
+// Floating Noctalia settings window.
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Blurred overview wallpaper setup.
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+// Disable xray on all our surfaces so it looks more realistic.
+// Noctalia publishes blur regions automatically when ext-background-effects is available.
+layer-rule {
+    match namespace="^noctalia-(notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+    }
+}
+
+// fuck the bar in particular, i want floating capsules with no weird ass blur
+// for maybe future me?? kindly ask noctalia to add this as a feature request
+// horrible hackfix btw whoever wrote this (it's me) needs to be shot
+// "at least it's temporary, right?" yeahhhhhhh sureeeeee....
+layer-rule {
+    match namespace="^noctalia-bar-[^\"]+$"
+    background-effect {
+        xray false
+        blur false
+    }
+}
+
+// Enable blur on noctalia's window switcher and disable xray.
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}

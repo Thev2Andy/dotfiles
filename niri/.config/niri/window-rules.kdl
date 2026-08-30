@@ -1,0 +1,85 @@
+// ─── General Window Rules ───
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+    draw-border-with-background false
+    open-maximized-to-edges false
+    tiled-state false
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// ─── Urgent Windows ───
+window-rule {
+    match is-urgent=true
+    baba-is-float true
+
+    border {
+        inactive-color "#d18771"
+    }
+
+    focus-ring {
+        inactive-color "#d18771"
+    }
+
+    shadow {
+        color "#d1877170"
+        softness 50
+    }
+}
+
+// ─── Floating Windows ───
+window-rule {
+    match app-id=r"(?i)^(steam)$"
+    match app-id=r"(?i)^(xdg-desktop-portal).*$"
+    match app-id=r"(?i)^(imv)$"
+    match app-id=r"(?i)^(vlc)$"
+    match app-id=r"(?i)^(scrcpy)$"
+    match app-id=r"(?i)^(sourcegit)$"
+    match app-id=r"(?i)^(zoom)$"
+    match app-id=r"(?i)^(xdg-desktop-portal-gtk)$"
+    match app-id=r"(?i)^(org.localsend.localsend_app)$"
+    match app-id=r"(?i)^(firefox)$" title=r"^(Picture-in-Picture)$"
+    open-floating true
+}
+
+// ─── Dynamic Screen Cast Targets ───
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#ff5760"
+        inactive-color "#4f262c"
+    }
+
+    border {
+        inactive-color "#4f262c"
+    }
+
+    shadow {
+        color "#4f262cc0"
+        softness 50
+    }
+
+    tab-indicator {
+        active-color "#ff5760"
+        inactive-color "#4f262c"
+    }
+}
+
+// ─── Blocked Out Windows ───
+window-rule {
+    // Placeholder negative match, add real matches below.
+    match app-id=r"a^"
+    block-out-from "screencast"
+}
+
+// ─── Steam Notification Toasts ───
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}

@@ -1,0 +1,51 @@
+// ╭────────────────────── Niri Configuration ──────────────────────╮
+// ├────────────────────────────────────────────────────────────────┤
+// │                _   _  __ _          _                    _     │
+// │   ___ ___ _ __| |_(_)/ _(_) ___  __| |  _ __   ___  __ _| | __ │
+// │  / __/ _ \ '__| __| | |_| |/ _ \/ _` | | '_ \ / _ \/ _` | |/ / │
+// │ | (_|  __/ |  | |_| |  _| |  __/ (_| | | |_) |  __/ (_| |   <  │
+// │  \___\___|_|   \__|_|_| |_|\___|\__,_| | .__/ \___|\__,_|_|\_\ │
+// │                                        |_|                     │
+// ╰────────────────────────────────────────────────────────────────╯
+//              ├─── https://niri-wm.github.io/niri ───┤
+
+// Add your own output configuration here..
+// Leaving it missing/empty will use Niri's autoconfig.
+include optional=true "outputs.kdl"
+
+// Import configuration modules..
+include "environment.kdl"
+include "input.kdl"
+include "layout.kdl"
+include "window-rules.kdl"
+include "animations.kdl"
+include "gestures.kdl"
+include "recent-windows.kdl"
+
+// Startup and Binds may depend on other programs.. (Such as the Noctalia shell)
+// For adapting to your own setup, it's advisable to review it for your own needs.
+include "startup.kdl"
+include "binds.kdl"
+
+// Set the CSD preference.
+prefer-no-csd true
+
+// Set the screenshot save path.
+screenshot-path "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+// Edit blur parameters for your own preferred look.
+blur {
+    passes 2
+    offset 5
+    noise 0.03
+    saturation 1.0
+}
+
+// Allows notification actions and window activation from apps.
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+// ─── Add (Optional) Noctalia Integrations ───
+include optional=true "noctalia-integration.kdl"
+include optional=true "noctalia.kdl"

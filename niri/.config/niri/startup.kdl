@@ -1,0 +1,8 @@
+spawn-at-startup "oniri" "--tiling-layout"
+spawn-at-startup "noctalia"
+spawn-at-startup "wayland-pipewire-idle-inhibit"
+spawn-at-startup "easyeffects" "--gapplication-service"
+
+hotkey-overlay {
+    skip-at-startup
+}
