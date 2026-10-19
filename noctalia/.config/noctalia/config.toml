@@ -380,6 +380,9 @@ password_style = "random"
 polkit_agent = true
 screen_time_enabled = true
 
+    [shell.launcher]
+    layout = "simple"
+
     [shell.panel]
     control_center_placement = "floating"
     open_near_click_control_center = true
