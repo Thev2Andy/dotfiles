@@ -23,17 +23,8 @@ layer-rule {
     }
 }
 
-// fuck the bar in particular, i want floating capsules with no weird ass blur
-// for maybe future me?? kindly ask noctalia to add this as a feature request
-// horrible hackfix btw whoever wrote this (it's me) needs to be shot
-// "at least it's temporary, right?" yeahhhhhhh sureeeeee....
-layer-rule {
-    match namespace="^noctalia-bar-[^\"]+$"
-    background-effect {
-        xray false
-        blur false
-    }
-}
+// FYI: hackfixing a window rule to remove bar blur is no longer required
+//     in v5.4.0 with bar.compositor_blur=false (and optionally bar.default.click_through=true for consistency)
 
 // Enable blur on noctalia's window switcher and disable xray.
 layer-rule {
